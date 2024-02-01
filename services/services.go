@@ -5,7 +5,6 @@ import (
 	"errors"
 
 	"github.com/20-VIGNESH-K/EnergyAuditing/models"
-	"github.com/20-VIGNESH-K/EnergyAuditing/validation"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -23,19 +22,6 @@ func init() {
 }
 
 func CreateUser(user models.CreateUser) error {
-
-	name := validation.IsValidName(user.Name)
-	if !name {
-		return errors.New("invalid Name")
-	}
-	email := validation.IsValidEmail(user.Email)
-	if !email {
-		return errors.New("invalid Email")
-	}
-	phoneNumber := validation.IsValidPhoneNumber(user.Phone)
-	if !phoneNumber {
-		return errors.New("invalid Phone Number")
-	}
 
 	existingUser, err := GetUserByEmail(user.Email)
 	if err == nil && existingUser.Email == user.Email {

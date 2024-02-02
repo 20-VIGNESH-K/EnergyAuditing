@@ -209,6 +209,7 @@
                 } else {
                     messageElement.innerText = 'User registered successfully';
                     messageElement.className = 'text-success';
+                    window.location.href = '/login';
                 }
             })
             .catch(error => console.error('Error:', error));

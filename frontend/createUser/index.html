@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -69,6 +70,7 @@
     </style>
     <title>User Registration</title>
 </head>
+
 <body>
     <div class="container">
         <h1>User Registration</h1>
@@ -148,6 +150,10 @@
             var password = document.getElementById('password').value;
             var confirmPassword = document.getElementById('confirmPassword').value;
 
+            if (password === '' || confirmPassword === '') {
+                alert('Please fill the fields');
+                return false;
+            }
             if (password !== confirmPassword) {
                 alert('Password and Confirm Password do not match');
                 return false; // Prevent form submission
@@ -200,20 +206,21 @@
                 },
                 body: JSON.stringify(Object.fromEntries(formData)),
             })
-            .then(response => response.json())
-            .then(data => {
-                var messageElement = document.getElementById('message');
-                if (data.error) {
-                    messageElement.innerText = data.error;
-                    messageElement.className = 'text-danger';
-                } else {
-                    messageElement.innerText = 'User registered successfully';
-                    messageElement.className = 'text-success';
-                    window.location.href = '/login';
-                }
-            })
-            .catch(error => console.error('Error:', error));
+                .then(response => response.json())
+                .then(data => {
+                    var messageElement = document.getElementById('message');
+                    if (data.error) {
+                        messageElement.innerText = data.error;
+                        messageElement.className = 'text-danger';
+                    } else {
+                        messageElement.innerText = 'User registered successfully';
+                        messageElement.className = 'text-success';
+                        window.location.href = '/login';
+                    }
+                })
+                .catch(error => console.error('Error:', error));
         }
     </script>
 </body>
+
 </html>

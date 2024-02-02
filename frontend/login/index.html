@@ -21,7 +21,7 @@
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             width: 300px;
-            text-align: center;
+            text-align: left; /* Align text to the left */
         }
 
         h1 {
@@ -30,6 +30,14 @@
 
         .form-label {
             color: #495057;
+            display: inline-block;
+            width: 80px; /* Adjust the width based on your preference */
+            margin-bottom: 5px; /* Add spacing between label and input */
+        }
+
+        .form-control {
+            display: inline-block;
+            width: calc(100% - 90px); /* Adjust the width based on your preference */
         }
 
         .btn-primary {
@@ -40,8 +48,13 @@
         #message {
             margin-top: 20px;
             font-weight: bold;
-            color: #dc3545;
+            text-align: center;
         }
+
+        .success-message {
+            color: #28a745; /* Green color for success messages */
+        }
+        
 
         .create-account-link {
             color: #007bff;
@@ -94,9 +107,10 @@
                 var messageElement = document.getElementById('message');
                 if (data.error) {
                     messageElement.innerText = data.error;
+                    messageElement.className = 'text-danger';
                 } else {
                     messageElement.innerText = 'Login successful';
-                    messageElement.style.color = '#28a745';  // Green color for success
+                    messageElement.className = 'success-message';
                 }
             })
             .catch(error => console.error('Error:', error));

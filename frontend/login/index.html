@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,8 +21,10 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: left; /* Align text to the left */
+            width: 600px;
+            height: 350px;
+            text-align: left;
+            /* Align text to the left */
         }
 
         h1 {
@@ -31,16 +34,20 @@
         .form-label {
             color: #495057;
             display: inline-block;
-            width: 80px; /* Adjust the width based on your preference */
-            margin-bottom: 5px; /* Add spacing between label and input */
+            width: 80px;
+            /* Adjust the width based on your preference */
+            margin-bottom: 5px;
+            /* Add spacing between label and input */
         }
 
         .form-control {
             display: inline-block;
-            width: calc(100% - 90px); /* Adjust the width based on your preference */
+            width: calc(100% - 90px);
+            /* Adjust the width based on your preference */
         }
 
         .btn-primary {
+            padding: 5px;
             background-color: #007bff;
             border-color: #007bff;
         }
@@ -52,9 +59,10 @@
         }
 
         .success-message {
-            color: #28a745; /* Green color for success messages */
+            color: #28a745;
+            /* Green color for success messages */
         }
-        
+
 
         .create-account-link {
             color: #007bff;
@@ -64,28 +72,31 @@
     </style>
     <title>Login</title>
 </head>
+
 <body>
     <div class="container">
-        <h1>Sign in</h1>
+       <center> <h1>Sign in</h1> </center>
+       <br>
         <form id="loginForm">
             <div class="mb-3">
                 <label for="email" class="form-label">Email:</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+                <input type="email" placeholder="example@gmail.com" class="form-control" id="email" name="email" required>
             </div>
 
             <div class="mb-3">
                 <label for="password" class="form-label">Password:</label>
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
-
-            <div class="mb-3">
-                <button type="button" class="btn btn-primary btn-lg" onclick="loginUser()">Login</button>
-            </div>
+            <center>
+                <div class="mb-3">
+                    <button type="button" class="btn btn-primary btn-lg" onclick="loginUser()">Login</button>
+                </div>
+            </center>
         </form>
         <div id="message"></div>
 
         <p class="mt-3">
-            Don't have an account? 
+            Don't have an account?
             <a href="/register" class="create-account-link">Sign up</a>
         </p>
     </div>
@@ -102,20 +113,21 @@
                 },
                 body: JSON.stringify(Object.fromEntries(formData)),
             })
-            .then(response => response.json())
-            .then(data => {
-                var messageElement = document.getElementById('message');
-                if (data.error) {
-                    messageElement.innerText = data.error;
-                    messageElement.className = 'text-danger';
-                } else {
-                    messageElement.innerText = 'Login successful';
-                    messageElement.className = 'success-message';
-                    window.location.href = '/home';
-                }
-            })
-            .catch(error => console.error('Error:', error));
+                .then(response => response.json())
+                .then(data => {
+                    var messageElement = document.getElementById('message');
+                    if (data.error) {
+                        messageElement.innerText = data.error;
+                        messageElement.className = 'text-danger';
+                    } else {
+                        messageElement.innerText = 'Login successful';
+                        messageElement.className = 'success-message';
+                        window.location.href = '/home';
+                    }
+                })
+                .catch(error => console.error('Error:', error));
         }
     </script>
 </body>
+
 </html>

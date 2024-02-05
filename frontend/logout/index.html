@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .content-wrapper {
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: #2c3e50;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar-brand, .navbar-nav .nav-link, .navbar-nav .sign-out-link {
+            color: #ecf0f1;
+        }
+
+        .navbar-brand:hover, .navbar-nav .nav-link:hover, .navbar-nav .sign-out-link:hover {
+            color: #ffffff;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h1 {
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+
+        .feature-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .feature-item {
+            flex: 0 0 48%;
+            padding: 10px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Blinking animation for menu items */
+        @keyframes blink {
+            50% {
+                color: #e74c3c; /* Blink color */
+            }
+        }
+
+        .blinking {
+            animation: blink 1s infinite;
+        }
+
+        /* Add more styles as needed */
+    </style>
+    <title>Logout</title>
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="container">
+            <h1 class="blinking">Thank you for accessing Energy Auditing System !!!</h1>
+            <div class="feature-container">
+                <div class="feature-item">
+                    <i class="fas fa-chart-bar fa-3x"></i>
+                    <h4>Analytics</h4>
+                    <p>Explore in-depth energy analytics to optimize consumption.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-cogs fa-3x"></i>
+                    <h4>Automation</h4>
+                    <p>Implement automated systems for efficient energy management.</p>
+                </div>
+            </div>
+            <p>You have been successfully logged out.</p>
+            <a class="login-again-link" href="/login">Login again</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

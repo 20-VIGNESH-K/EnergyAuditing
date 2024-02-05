@@ -12,6 +12,7 @@ func SetupRouter() *gin.Engine {
 	router.Static("/register", "./frontend/createUser/")
 	router.Static("/login", "./frontend/login/")
 	router.Static("/home", "./frontend/home/")
+	router.Static("/logout", "./frontend/logout/")
 
 	// Handle POST requests for user registration and login
 	router.POST("/register", Controllers.CreateUser)

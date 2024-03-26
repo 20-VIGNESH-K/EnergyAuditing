@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weaving Data Entry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+
+        form {
+            width: 1000px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .inputvalue {
+            width: 40%;
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+
+        .input-box {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        table {
+            display: table;
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+            align-items: center;
+            align-self: center;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        input {
+            max-width: 80%;
+            width: 50px;
+        }
+        .form-submit-button{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            font-size: large;
+            width: 300px;
+            margin-left: 350px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="weavingForm">
+
+        <h2 style="width: 100%;">Weaving Data Entry</h2>
+        <div class="input-group inputvalue">
+
+            <label for="month">Month</label>
+            <input type="number" id="month" name="month" placeholder="Enter the month to be calculated" required>
+        </div>
+
+        <table >
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Appliances</th>
+                    <th>Operating Time Per Month</th>
+                    <th>Monthly Energy Consumption</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Row 1 -->
+                <tr>
+                    <td>1.</td>
+                    <td>Sieving Machine</td>
+                    <td><input type="number" id="sievingMachine" name="sievingMachine" required></td>
+                    <td><input type="number" id="sievingMachineEnergy" name="sievingMachineEnergy" required></td>
+                </tr>
+                <!-- Row 2 -->
+                <tr>
+                    <td>2.</td>
+                    <td>Indirect Wraping Machine</td>
+                    <td><input type="number" id="indirectWrapingMachine" name="indirectWrapingMachine" required></td>
+                    <td><input type="number" id="indirectWrapingEnergy" name="indirectWrapingEnergy" required></td>
+                    <!-- If there's no hourly energy for this appliance -->
+                </tr>
+                <!-- Add more rows for other appliances as needed -->
+                <!-- Row 3 -->
+                <tr>
+                    <td>3.</td>
+                    <td>Direct Wraping Machine</td>
+                    <td><input type="number" id="directWrapingMachine" name="directWrapingMachine" required></td>
+                    <td><input type="number" id="directWrapingMachineEnergy" name="directWrapingMachineEnergy" required>
+                    </td>
+                </tr>
+                <!-- Add more rows for other appliances as needed -->
+                <!-- Row 4 -->
+                <tr>
+                    <td>4.</td>
+                    <td>Sample Sizing Machine</td>
+                    <td><input type="number" id="sampleSizingMachine" name="sampleSizingMachine" required></td>
+                    <td><input type="number" id="sampleSizingMachineEnergy" name="sampleSizingMachineEnergy" required>
+                    </td>
+                </tr>
+                <!-- Add more rows for other appliances as needed -->
+                <!-- Row 5 -->
+                <tr>
+                    <td>5.</td>
+                    <td>Sample Wraping Machine</td>
+                    <td><input type="number" id="sampleWrapingMachine" name="sampleWrapingMachine" required></td>
+                    <td><input type="number" id="sampleWrapingMachineEnergy" name="sampleWrapingMachineEnergy" required>
+                    </td>
+                </tr>
+                <!-- Add more rows for other appliances as needed -->
+                <!-- Row 6 -->
+                <tr>
+                    <td>6.</td>
+                    <td>Sample Drawing Machine</td>
+                    <td><input type="number" id="sampleDrawingMachine" name="sampleDrawingMachine" required></td>
+                    <td><input type="number" id="sampleDrawingMachineEnergy" name="sampleDrawingMachineEnergy" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>7.</td>
+                    <td>Airjet Weaving Machine</td>
+                    <td><input type="number" id="airjetWeavingMachine" name="airjetWeavingMachine" required></td>
+                    <td><input type="number" id="airjetWeavingMachineEnergy" name="airjetWeavingMachineEnergy" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>8.</td>
+                    <td>Rapier Weaving Machine</td>
+                    <td><input type="number" id="rapierWeavingMachine" name="rapierWeavingMachine" required></td>
+                    <td><input type="number" id="rapierWeavingMachineEnergy" name="rapierWeavingMachineEnergy" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>9.</td>
+                    <td>Compressor</td>
+                    <td><input type="number" id="compressor" name="compressor" required></td>
+                    <td><input type="number" id="compressorEnergy" name="compressorEnergy" required></td>
+                </tr>
+                <!-- Add more rows for other appliances as needed -->
+            </tbody>
+        </table>
+
+
+        
+
+
+
+
+        <button type="submit" class="form-submit-button">Submit</button>
+    </form>
+
+    <div id="result">
+        <h2>Results</h2>
+        <!-- Display results here -->
+    </div>
+
+    <div id="bestcontainer"></div>
+
+    <script>
+        document.getElementById("weavingForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var formData = {
+                sievingmachine: Number((document.getElementById("sievingMachine").value).trim()),
+                indirectwrapingmachine: Number((document.getElementById("indirectWrapingMachine").value).trim()),
+                directwrapingmachine: Number((document.getElementById("directWrapingMachine").value).trim()),
+                samplesizingmachine: Number((document.getElementById("sampleSizingMachine").value).trim()),
+                samplewrapingmachine: Number((document.getElementById("sampleWrapingMachine").value).trim()),
+                sampledrawingmachine: Number((document.getElementById("sampleDrawingMachine").value).trim()),
+                airjetweavingmachine: Number((document.getElementById("airjetWeavingMachine").value).trim()),
+                rapierweavingmachine: Number((document.getElementById("rapierWeavingMachine").value).trim()),
+                compressor: Number((document.getElementById("compressor").value).trim()),
+                sievingmachine_energy: Number((document.getElementById("sievingMachineEnergy").value).trim()),
+                indirectwrapingmachine_energy: Number((document.getElementById("indirectWrapingEnergy").value).trim()),
+                directwrapingmachine_energy: Number((document.getElementById("directWrapingMachineEnergy").value).trim()),
+                samplesizingmachine_energy: Number((document.getElementById("sampleSizingMachineEnergy").value).trim()),
+                samplewrapingmachine_energy: Number((document.getElementById("sampleWrapingMachineEnergy").value).trim()),
+                sampledrawingmachine_energy: Number((document.getElementById("sampleDrawingMachineEnergy").value).trim()),
+                airjetweavingmachine_energy: Number((document.getElementById("airjetWeavingMachineEnergy").value).trim()),
+                rapierweavingmachine_energy: Number((document.getElementById("rapierWeavingMachineEnergy").value).trim()),
+                compressor_energy: Number((document.getElementById("compressorEnergy").value).trim()),
+                month: Number((document.getElementById("month").value).trim()),
+            }
+
+            fetch("/insert", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message) {
+                        alert(data.message);
+                        DisplayBest(formData)
+                    } else if (data.error) {
+                        alert(data.error);
+                    } else {
+                        document.getElementById("result").innerHTML = "<pre>" + JSON.stringify(data, null, 2) + "</pre>";
+                        document.getElementById("result").style.display = "block";
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("An error occur. Please try again.");
+                });
+        });
+
+        function DisplayBest(formData){
+            html = `<table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Value</th>
+                    <th>Sieving Machine</th>
+                    <th>Best Sieving Machine</th>
+                    <th>Energy Saved</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Row 1 -->
+                <tr>
+                    <td>1.</td>
+                    <td>Operating Time Per Month</td>
+                    <td> <p>${formData.sievingmachine}</p> </td>              
+                    <td> <p>10</p> </td>
+                    <td> <p>${formData.sievingmachine - 10}</p> </td>
+                </tr>
+                <!-- Row 2 -->
+                <tr>
+                    <td>2.</td>
+                    <td>Monthly Energy Consumption</td>
+                    <td> <p>${formData.sievingmachine_energy}</p> </td>              
+                    <td> <p>10</p> </td>
+                    <td> <p>${formData.sievingmachine_energy - 10}</p> </td>
+                    <!-- If there's no hourly energy for this appliance -->
+                </tr>
+
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Value</th>
+                    <th>Indirect Wraping Machine</th>
+                    <th>Best Indirect Wraping Machine</th>
+                    <th>Energy Saved</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Row 1 -->
+                <tr>
+                    <td>1.</td>
+                    <td>Operating Time Per Month</td>
+                    <td> <p>${formData.indirectwrapingmachine}</p> </td>              
+                    <td> <p>10</p> </td>
+                    <td> <p>${formData.indirectwrapingmachine - 10}</p> </td>
+                </tr>
+                <!-- Row 2 -->
+                <tr>
+                    <td>2.</td>
+                    <td>Monthly Energy Consumption</td>
+                    <td> <p>${formData.indirectwrapingmachine_energy}</p> </td>              
+                    <td> <p>10</p> </td>
+                    <td> <p>${formData.indirectwrapingmachine_energy - 10}</p> </td>
+                    <!-- If there's no hourly energy for this appliance -->
+                </tr>
+
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Value</th>
+                    <th>Direct Wraping Machine</th>
+                    <th>Best Direct Wraping Machine</th>
+                    <th>Energy Saved</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Row 1 -->
+                <tr>
+                    <td>1.</td>
+                    <td>Operating Time Per Month</td>
+                    <td> <p>${formData.directwrapingmachine}</p> </td>              
+                    <td> <p>10</p> </td>
+                    <td> <p>${formData.directwrapingmachine - 10}</p> </td>
+                </tr>
+                <!-- Row 2 -->
+                <tr>
+                    <td>2.</td>
+                    <td>Monthly Energy Consumption</td>
+                    <td> <p>${formData.directwrapingmachine_energy}</p> </td>              
+                    <td> <p>10</p> </td>
+                    <td> <p>${formData.directwrapingmachine_energy - 10}</p> </td>
+                    <!-- If there's no hourly energy for this appliance -->
+                </tr>
+
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Value</th>
+                    <th>Sample Sizing Machine</th>
+                    <th>Best Sample Sizing Machine</th>
+                    <th>Energy Saved</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Row 1 -->
+                <tr>
+                    <td>1.</td>
+                    <td>Operating Time Per Month</td>
+                    <td> <p>${formData.samplesizingmachine}</p> </td>              
+                    <td> <p>10</p> </td>
+                    <td> <p>${formData.samplesizingmachine - 10}</p> </td>
+                </tr>
+                <!-- Row 2 -->
+                <tr>
+                    <td>2.</td>
+                    <td>Monthly Energy Consumption</td>
+                    <td> <p>${formData.samplesizingmachine_energy}</p> </td>              
+                    <td> <p>10</p> </td>
+                    <td> <p>${formData.samplesizingmachine_energy - 10}</p> </td>
+                    <!-- If there's no hourly energy for this appliance -->
+                </tr>
+
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Value</th>
+                    <th>Airjet Weaving Machine</th>
+                    <th>Best Airjet Weaving Machine</th>
+                    <th>Energy Saved</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Row 1 -->
+                <tr>
+                    <td>1.</td>
+                    <td>Operating Time Per Month</td>
+                    <td> <p>${formData.samplewrapingmachine}</p> </td>              
+                    <td> <p>10</p> </td>
+                    <td> <p>${formData.samplewrapingmachine - 10}</p> </td>
+                </tr>
+                <!-- Row 2 -->
+                <tr>
+                    <td>2.</td>
+                    <td>Monthly Energy Consumption</td>
+                    <td> <p>${formData.samplewrapingmachine_energy}</p> </td>              
+                    <td> <p>10</p> </td>
+                    <td> <p>${formData.samplewrapingmachine_energy - 10}</p> </td>
+                    <!-- If there's no hourly energy for this appliance -->
+                </tr>
+
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Value</th>
+                    <th>Rapier Weaving Machine</th>
+                    <th>Best Rapier Weaving Machine</th>
+                    <th>Energy Saved</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Row 1 -->
+                <tr>
+                    <td>1.</td>
+                    <td>Operating Time Per Month</td>
+                    <td> <p>${formData.sampledrawingmachine}</p> </td>              
+                    <td> <p>10</p> </td>
+                    <td> <p>${formData.sampledrawingmachine - 10}</p> </td>
+                </tr>
+                <!-- Row 2 -->
+                <tr>
+                    <td>2.</td>
+                    <td>Monthly Energy Consumption</td>
+                    <td> <p>${formData.sampledrawingmachine_energy}</p> </td>              
+                    <td> <p>10</p> </td>
+                    <td> <p>${formData.sampledrawingmachine_energy - 10}</p> </td>
+                    <!-- If there's no hourly energy for this appliance -->
+                </tr>
+
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Value</th>
+                    <th>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; Compressor  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+                    <th>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; Best Compressor &nbsp; &nbsp; &nbsp; &nbsp;</th>
+                    <th>Energy Saved</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Row 1 -->
+                <tr>
+                    <td>1.</td>
+                    <td>Operating Time Per Month</td>
+                    <td> <p>${formData.airjetweavingmachine}</p> </td>              
+                    <td> <p>10</p> </td>
+                    <td> <p>${formData.airjetweavingmachine - 10}</p> </td>
+                </tr>
+                <!-- Row 2 -->
+                <tr>
+                    <td>2.</td>
+                    <td>Monthly Energy Consumption</td>
+                    <td> <p>${formData.airjetweavingmachine_energy}</p> </td>              
+                    <td> <p>10</p> </td>
+                    <td> <p>${formData.airjetweavingmachine_energy - 10}</p> </td>
+                    <!-- If there's no hourly energy for this appliance -->
+                </tr>
+
+            </tbody>
+        </table>`
+        document.getElementById("bestcontainer").innerHTML = html;
+        }
+
+
+       
+
+    </script>
+</body>
+
+</html>

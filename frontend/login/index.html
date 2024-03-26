@@ -108,6 +108,8 @@
     <script>
         function loginUser() {
             var form = document.getElementById('loginForm');
+            const email = (document.getElementById("email").value).trim()
+            localStorage.setItem("email",email)
             var formData = new FormData(form);
 
             fetch('/login', {

@@ -2,6 +2,7 @@ package Controllers
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/20-VIGNESH-K/EnergyAuditing/models"
@@ -40,7 +41,10 @@ func CreateUser(c *gin.Context) {
 		if err.Error() == "user already exists" {
 			c.JSON(http.StatusConflict, gin.H{"error": err.Error()})
 			return
-		}
+		}else {
+            c.JSON(http.StatusInternalServerError, gin.H{"error": "internal server error"})
+        }
+		return
 	}
 	c.JSON(http.StatusOK, gin.H{"message": "User registered successfully"})
 }
@@ -66,4 +70,42 @@ func Login(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, gin.H{"message": "Login successful"})
+}
+
+func Weaving(c *gin.Context) {
+    var weave models.Weaving
+
+    if err := c.ShouldBindJSON(&weave); err != nil {
+		log.Println(err)
+        c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+        return
+    }
+
+    err := services.Weaving(weave)
+    if err != nil {
+        if err.Error() == "string value is not allowed" {
+            c.JSON(http.StatusConflict, gin.H{"error": err.Error()})
+        } else {
+            c.JSON(http.StatusInternalServerError, gin.H{"error": "internal server error"})
+        }
+        return
+    }
+
+    c.JSON(http.StatusOK, gin.H{"message": "inserted successfully"})
+}
+
+func GetUser(c *gin.Context){
+	var user models.GetUser
+	if err := c.ShouldBindJSON(&user); err != nil {
+		log.Println(err)
+        c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+        return
+    }
+	data,message,err := services.GetUser(user)
+	if err != nil{
+		log.Println(err)
+		c.JSON(http.StatusOK, gin.H{"error": message})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"message": data})
 }

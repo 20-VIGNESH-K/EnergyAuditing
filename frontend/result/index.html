@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://media.istockphoto.com/id/1138444757/photo/abstract-blur-inside-interior-of-modern-workplace-in-blue-color-with-exposure-light.webp?b=1&s=170667a&w=0&k=20&c=vRPygH4gsWBqhgxvv8u2cfjbab21e8gHPvIkG75YkGQ=");
+     background-repeat: no-repeat;
+    background-size: cover; /* Adjusts the size of the background image to cover the entire body */
+            margin: 0;
+            padding: 0;
+        }
+
+        #resultcontainer {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        #resultTable {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        #resultTable th,
+        #resultTable td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        #resultTable th {
+            background-color: #f2f2f2;
+            color: #333;
+            text-align: center;
+        }
+
+        #resultTable tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        #resultTable tr:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div id="resultcontainer">
+        <center><h1 style="font-size: 40px;">Result</h1></center>
+        
+        <table id="resultTable">
+            <thead>
+                <tr>
+                    <th>S.no</th>
+                    <th>Machine</th>
+                    <th>Machine Energy Usage (kWh)</th>
+                    <th>Best Machine</th>
+                    <th>Best Machine Energy Usage (kWh)</th>
+                    <th>Energy Saved (kWh)</th>
+                </tr>
+            </thead>
+            <tbody id="resultBody">
+                <!-- Table body will be populated dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        DisplayData();
+
+        function DisplayData() {
+            const myData = JSON.parse(localStorage.getItem("myData"));
+            const resultBody = document.getElementById("resultBody");
+            let sno = 1;
+
+            myData.forEach((item) => {
+                const row = document.createElement("tr");
+
+                const sNoCell = document.createElement("td");
+                sNoCell.textContent = sno;
+                row.appendChild(sNoCell);
+
+                const machineCell = document.createElement("td");
+                machineCell.textContent = item.machine;
+                row.appendChild(machineCell);
+
+                const machineCellUsage = document.createElement("td");
+                machineCellUsage.textContent = item.machineenergyusage;
+                row.appendChild(machineCellUsage);
+
+                const bestmachineCell = document.createElement("td");
+                bestmachineCell.textContent = item.bestmachine;
+                row.appendChild(bestmachineCell);
+
+                const bestmachineCellUsage = document.createElement("td");
+                bestmachineCellUsage.textContent = item.bestmachineenergyusage;
+                row.appendChild(bestmachineCellUsage);
+
+                const energySavedCell = document.createElement("td");
+                energySavedCell.textContent = item.energysaved;
+                row.appendChild(energySavedCell);
+
+                if (item.isbest) {
+                    return;
+                }
+
+                sno = sno + 1;
+
+                resultBody.appendChild(row);
+            });
+        }
+    </script>
+</body>
+</html>

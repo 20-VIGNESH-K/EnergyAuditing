@@ -10,6 +10,7 @@ func SetupRouter() *gin.Engine {
 
 	// Serve static files for the register and login pages
 	router.Static("/register", "./frontend/createUser/")
+	router.Static("/result", "./frontend/result/")
 	router.Static("/login", "./frontend/login/")
 	router.Static("/home", "./frontend/home/")
 	router.Static("/home-industry", "./frontend/industry")

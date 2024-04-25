@@ -8,12 +8,14 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f0f0f0;
             margin: 0;
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100vh;
+            background-image: url("https://media.istockphoto.com/id/1138444757/photo/abstract-blur-inside-interior-of-modern-workplace-in-blue-color-with-exposure-light.webp?b=1&s=170667a&w=0&k=20&c=vRPygH4gsWBqhgxvv8u2cfjbab21e8gHPvIkG75YkGQ=");
+     background-repeat: no-repeat;
+    background-size: cover; /* Adjusts the size of the background image to cover the entire body */
         }
 
         .container {
@@ -215,7 +217,10 @@
                     } else {
                         messageElement.innerText = 'User registered successfully';
                         messageElement.className = 'text-success';
-                        window.location.href = '/login';
+                        setTimeout(()=>{
+                            window.location.href = '/login';
+                        },2500)
+                       
                     }
                 })
                 .catch(error => console.error('Error:', error));

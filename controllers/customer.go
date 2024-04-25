@@ -81,7 +81,7 @@ func Weaving(c *gin.Context) {
         return
     }
 
-    err := services.Weaving(weave)
+    result,err := services.Weaving(weave)
     if err != nil {
         if err.Error() == "string value is not allowed" {
             c.JSON(http.StatusConflict, gin.H{"error": err.Error()})
@@ -91,7 +91,7 @@ func Weaving(c *gin.Context) {
         return
     }
 
-    c.JSON(http.StatusOK, gin.H{"message": "inserted successfully"})
+    c.JSON(http.StatusOK, gin.H{"message": result})
 }
 
 func GetUser(c *gin.Context){

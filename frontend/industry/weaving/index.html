@@ -14,7 +14,9 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f2f2f2;
+            background-image: url("https://media.istockphoto.com/id/1138444757/photo/abstract-blur-inside-interior-of-modern-workplace-in-blue-color-with-exposure-light.webp?b=1&s=170667a&w=0&k=20&c=vRPygH4gsWBqhgxvv8u2cfjbab21e8gHPvIkG75YkGQ=");
+     background-repeat: no-repeat;
+    background-size: cover; /* Adjusts the size of the background image to cover the entire body */
         }
 
         form {
@@ -267,8 +269,28 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.message) {
-                        alert(data.message);
-                        DisplayBest(formData)
+                        alert("Data Inserted Successfully");
+                    document.getElementById("sievingMachine").value = ""
+                document.getElementById("indirectWrapingMachine").value = ""
+                document.getElementById("directWrapingMachine").value = ""
+                document.getElementById("sampleSizingMachine").value = ""
+                document.getElementById("sampleWrapingMachine").value = ""
+                document.getElementById("sampleDrawingMachine").value = ""
+                document.getElementById("airjetWeavingMachine").value = ""
+                document.getElementById("rapierWeavingMachine").value = ""
+                document.getElementById("compressor").value = ""
+                document.getElementById("sievingMachineEnergy").value = ""
+                document.getElementById("indirectWrapingEnergy").value = ""
+                document.getElementById("directWrapingMachineEnergy").value = ""
+                document.getElementById("sampleSizingMachineEnergy").value = ""
+                document.getElementById("sampleWrapingMachineEnergy").value = ""
+                document.getElementById("sampleDrawingMachineEnergy").value = ""
+                document.getElementById("airjetWeavingMachineEnergy").value = ""
+                document.getElementById("rapierWeavingMachineEnergy").value = ""
+                document.getElementById("compressorEnergy").value
+                document.getElementById("month").value = ""
+                        localStorage.setItem("myData", JSON.stringify(data.message));
+                        window.location.href = "/result"
                     } else if (data.error) {
                         alert(data.error);
                     } else {
@@ -282,226 +304,7 @@
                 });
         });
 
-        function DisplayBest(formData){
-            html = `<table>
-            <thead>
-                <tr>
-                    <th>S.No</th>
-                    <th>Value</th>
-                    <th>Sieving Machine</th>
-                    <th>Best Sieving Machine</th>
-                    <th>Energy Saved</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Row 1 -->
-                <tr>
-                    <td>1.</td>
-                    <td>Operating Time Per Month (hr/month)</td>
-                    <td> <p>${formData.sievingmachine}</p> </td>              
-                    <td> <p>10</p> </td>
-                    <td> <p>${formData.sievingmachine - 10}</p> </td>
-                </tr>
-                <!-- Row 2 -->
-                <tr>
-                    <td>2.</td>
-                    <td>Hourly Energy Consumption (kWh)</td>
-                    <td> <p>${formData.sievingmachine_energy}</p> </td>              
-                    <td> <p>10</p> </td>
-                    <td> <p>${formData.sievingmachine_energy - 10}</p> </td>
-                    <!-- If there's no hourly energy for this appliance -->
-                </tr>
-
-            </tbody>
-        </table>
-        <table>
-            <thead>
-                <tr>
-                    <th>S.No</th>
-                    <th>Value</th>
-                    <th>Indirect Wraping Machine</th>
-                    <th>Best Indirect Wraping Machine</th>
-                    <th>Energy Saved</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Row 1 -->
-                <tr>
-                    <td>1.</td>
-                    <td>Operating Time Per Month (hr/month)</td>
-                    <td> <p>${formData.indirectwrapingmachine}</p> </td>              
-                    <td> <p>10</p> </td>
-                    <td> <p>${formData.indirectwrapingmachine - 10}</p> </td>
-                </tr>
-                <!-- Row 2 -->
-                <tr>
-                    <td>2.</td>
-                    <td>Hourly Energy Consumption (kWh)</td>
-                    <td> <p>${formData.indirectwrapingmachine_energy}</p> </td>              
-                    <td> <p>10</p> </td>
-                    <td> <p>${formData.indirectwrapingmachine_energy - 10}</p> </td>
-                    <!-- If there's no hourly energy for this appliance -->
-                </tr>
-
-            </tbody>
-        </table>
-        <table>
-            <thead>
-                <tr>
-                    <th>S.No</th>
-                    <th>Value</th>
-                    <th>Direct Wraping Machine</th>
-                    <th>Best Direct Wraping Machine</th>
-                    <th>Energy Saved</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Row 1 -->
-                <tr>
-                    <td>1.</td>
-                    <td>Operating Time Per Month (hr/month)</td>
-                    <td> <p>${formData.directwrapingmachine}</p> </td>              
-                    <td> <p>10</p> </td>
-                    <td> <p>${formData.directwrapingmachine - 10}</p> </td>
-                </tr>
-                <!-- Row 2 -->
-                <tr>
-                    <td>2.</td>
-                    <td>Hourly Energy Consumption (kWh)</td>
-                    <td> <p>${formData.directwrapingmachine_energy}</p> </td>              
-                    <td> <p>10</p> </td>
-                    <td> <p>${formData.directwrapingmachine_energy - 10}</p> </td>
-                    <!-- If there's no hourly energy for this appliance -->
-                </tr>
-
-            </tbody>
-        </table>
-        <table>
-            <thead>
-                <tr>
-                    <th>S.No</th>
-                    <th>Value</th>
-                    <th>Sample Sizing Machine</th>
-                    <th>Best Sample Sizing Machine</th>
-                    <th>Energy Saved</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Row 1 -->
-                <tr>
-                    <td>1.</td>
-                    <td>Operating Time Per Month (hr/month)</td>
-                    <td> <p>${formData.samplesizingmachine}</p> </td>              
-                    <td> <p>10</p> </td>
-                    <td> <p>${formData.samplesizingmachine - 10}</p> </td>
-                </tr>
-                <!-- Row 2 -->
-                <tr>
-                    <td>2.</td>
-                    <td>Hourly Energy Consumption (kWh)</td>
-                    <td> <p>${formData.samplesizingmachine_energy}</p> </td>              
-                    <td> <p>10</p> </td>
-                    <td> <p>${formData.samplesizingmachine_energy - 10}</p> </td>
-                    <!-- If there's no hourly energy for this appliance -->
-                </tr>
-
-            </tbody>
-        </table>
-        <table>
-            <thead>
-                <tr>
-                    <th>S.No</th>
-                    <th>Value</th>
-                    <th>Airjet Weaving Machine</th>
-                    <th>Best Airjet Weaving Machine</th>
-                    <th>Energy Saved</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Row 1 -->
-                <tr>
-                    <td>1.</td>
-                    <td>Operating Time Per Month (hr/month)</td>
-                    <td> <p>${formData.samplewrapingmachine}</p> </td>              
-                    <td> <p>10</p> </td>
-                    <td> <p>${formData.samplewrapingmachine - 10}</p> </td>
-                </tr>
-                <!-- Row 2 -->
-                <tr>
-                    <td>2.</td>
-                    <td>Hourly Energy Consumption (kWh)</td>
-                    <td> <p>${formData.samplewrapingmachine_energy}</p> </td>              
-                    <td> <p>10</p> </td>
-                    <td> <p>${formData.samplewrapingmachine_energy - 10}</p> </td>
-                    <!-- If there's no hourly energy for this appliance -->
-                </tr>
-
-            </tbody>
-        </table>
-        <table>
-            <thead>
-                <tr>
-                    <th>S.No</th>
-                    <th>Value</th>
-                    <th>Rapier Weaving Machine</th>
-                    <th>Best Rapier Weaving Machine</th>
-                    <th>Energy Saved</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Row 1 -->
-                <tr>
-                    <td>1.</td>
-                    <td>Operating Time Per Month (hr/month)</td>
-                    <td> <p>${formData.sampledrawingmachine}</p> </td>              
-                    <td> <p>10</p> </td>
-                    <td> <p>${formData.sampledrawingmachine - 10}</p> </td>
-                </tr>
-                <!-- Row 2 -->
-                <tr>
-                    <td>2.</td>
-                    <td>Hourly Energy Consumption (kWh)</td>
-                    <td> <p>${formData.sampledrawingmachine_energy}</p> </td>              
-                    <td> <p>10</p> </td>
-                    <td> <p>${formData.sampledrawingmachine_energy - 10}</p> </td>
-                    <!-- If there's no hourly energy for this appliance -->
-                </tr>
-
-            </tbody>
-        </table>
-        <table>
-            <thead>
-                <tr>
-                    <th>S.No</th>
-                    <th>Value</th>
-                    <th>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; Compressor  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
-                    <th>&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; Best Compressor &nbsp; &nbsp; &nbsp; &nbsp;</th>
-                    <th>Energy Saved</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Row 1 -->
-                <tr>
-                    <td>1.</td>
-                    <td>Operating Time Per Month (hr/month)</td>
-                    <td> <p>${formData.airjetweavingmachine}</p> </td>              
-                    <td> <p>10</p> </td>
-                    <td> <p>${formData.airjetweavingmachine - 10}</p> </td>
-                </tr>
-                <!-- Row 2 -->
-                <tr>
-                    <td>2.</td>
-                    <td>Hourly Energy Consumption (kWh)</td>
-                    <td> <p>${formData.airjetweavingmachine_energy}</p> </td>              
-                    <td> <p>10</p> </td>
-                    <td> <p>${formData.airjetweavingmachine_energy - 10}</p> </td>
-                    <!-- If there's no hourly energy for this appliance -->
-                </tr>
-
-            </tbody>
-        </table>`
-        document.getElementById("bestcontainer").innerHTML = html;
-        }
+       
 
 
        

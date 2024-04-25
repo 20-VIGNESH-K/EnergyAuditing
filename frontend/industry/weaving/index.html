@@ -15,8 +15,9 @@
             align-items: center;
             height: 100vh;
             background-image: url("https://media.istockphoto.com/id/1138444757/photo/abstract-blur-inside-interior-of-modern-workplace-in-blue-color-with-exposure-light.webp?b=1&s=170667a&w=0&k=20&c=vRPygH4gsWBqhgxvv8u2cfjbab21e8gHPvIkG75YkGQ=");
-     background-repeat: no-repeat;
-    background-size: cover; /* Adjusts the size of the background image to cover the entire body */
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* Adjusts the size of the background image to cover the entire body */
         }
 
         form {
@@ -109,7 +110,8 @@
             max-width: 80%;
             width: 50px;
         }
-        .form-submit-button{
+
+        .form-submit-button {
             font-family: Arial, Helvetica, sans-serif;
             font-weight: 600;
             font-size: large;
@@ -129,7 +131,7 @@
             <input type="number" id="month" name="month" placeholder="Enter the month to be calculated" required>
         </div>
 
-        <table >
+        <table>
             <thead>
                 <tr>
                     <th>S.No</th>
@@ -218,7 +220,7 @@
         </table>
 
 
-        
+
 
 
 
@@ -270,25 +272,25 @@
                 .then(data => {
                     if (data.message) {
                         alert("Data Inserted Successfully");
-                    document.getElementById("sievingMachine").value = ""
-                document.getElementById("indirectWrapingMachine").value = ""
-                document.getElementById("directWrapingMachine").value = ""
-                document.getElementById("sampleSizingMachine").value = ""
-                document.getElementById("sampleWrapingMachine").value = ""
-                document.getElementById("sampleDrawingMachine").value = ""
-                document.getElementById("airjetWeavingMachine").value = ""
-                document.getElementById("rapierWeavingMachine").value = ""
-                document.getElementById("compressor").value = ""
-                document.getElementById("sievingMachineEnergy").value = ""
-                document.getElementById("indirectWrapingEnergy").value = ""
-                document.getElementById("directWrapingMachineEnergy").value = ""
-                document.getElementById("sampleSizingMachineEnergy").value = ""
-                document.getElementById("sampleWrapingMachineEnergy").value = ""
-                document.getElementById("sampleDrawingMachineEnergy").value = ""
-                document.getElementById("airjetWeavingMachineEnergy").value = ""
-                document.getElementById("rapierWeavingMachineEnergy").value = ""
-                document.getElementById("compressorEnergy").value
-                document.getElementById("month").value = ""
+                        document.getElementById("sievingMachine").value = ""
+                        document.getElementById("indirectWrapingMachine").value = ""
+                        document.getElementById("directWrapingMachine").value = ""
+                        document.getElementById("sampleSizingMachine").value = ""
+                        document.getElementById("sampleWrapingMachine").value = ""
+                        document.getElementById("sampleDrawingMachine").value = ""
+                        document.getElementById("airjetWeavingMachine").value = ""
+                        document.getElementById("rapierWeavingMachine").value = ""
+                        document.getElementById("compressor").value = ""
+                        document.getElementById("sievingMachineEnergy").value = ""
+                        document.getElementById("indirectWrapingEnergy").value = ""
+                        document.getElementById("directWrapingMachineEnergy").value = ""
+                        document.getElementById("sampleSizingMachineEnergy").value = ""
+                        document.getElementById("sampleWrapingMachineEnergy").value = ""
+                        document.getElementById("sampleDrawingMachineEnergy").value = ""
+                        document.getElementById("airjetWeavingMachineEnergy").value = ""
+                        document.getElementById("rapierWeavingMachineEnergy").value = ""
+                        document.getElementById("compressorEnergy").value
+                        document.getElementById("month").value = ""
                         localStorage.setItem("myData", JSON.stringify(data.message));
                         window.location.href = "/result"
                     } else if (data.error) {
@@ -304,10 +306,10 @@
                 });
         });
 
-       
 
 
-       
+
+
 
     </script>
 </body>

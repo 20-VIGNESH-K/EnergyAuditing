@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,47 +11,49 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-     background-image: url("https://media.istockphoto.com/id/1138444757/photo/abstract-blur-inside-interior-of-modern-workplace-in-blue-color-with-exposure-light.webp?b=1&s=170667a&w=0&k=20&c=vRPygH4gsWBqhgxvv8u2cfjbab21e8gHPvIkG75YkGQ=");
-     background-repeat: no-repeat;
-    background-size: cover; /* Adjusts the size of the background image to cover the entire body */
+      background-image: url("https://media.istockphoto.com/id/1138444757/photo/abstract-blur-inside-interior-of-modern-workplace-in-blue-color-with-exposure-light.webp?b=1&s=170667a&w=0&k=20&c=vRPygH4gsWBqhgxvv8u2cfjbab21e8gHPvIkG75YkGQ=");
+      background-repeat: no-repeat;
+      background-size: cover;
+      /* Adjusts the size of the background image to cover the entire body */
     }
-    
+
     /* Container for Dropdown */
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 60px auto;
       text-align: center;
       line-height: 35px;
     }
-    
+
     /* Style the dropdown button */
     .dropdown {
       position: relative;
       display: inline-block;
     }
-    
+
     .dropbtn {
-      background-color: #4CAF50;
+      background-color: #596d5a;
       color: white;
       padding: 14px;
-      font-size: 16px;
+      font-size: 18px;
       border: none;
       cursor: pointer;
       border-radius: 4px;
     }
-    
+
     /* Dropdown Content */
     .dropdown-content {
       display: none;
       position: absolute;
       background-color: #fff;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
       z-index: 1;
       border-radius: 4px;
-      width: 160px; /* Adjust the width as needed */
+      width: 160px;
+      /* Adjust the width as needed */
       text-align: left;
     }
-    
+
     /* Dropdown Links */
     .dropdown-content a {
       color: black;
@@ -58,59 +61,64 @@
       text-decoration: none;
       display: block;
     }
-    
+
     /* Change color of dropdown links on hover */
     .dropdown-content a:hover {
       background-color: #f1f1f1;
     }
-    
+
     /* Show the dropdown menu on hover */
     .dropdown:hover .dropdown-content {
       display: block;
     }
-    
+
     /* Energy Auditing Content */
     .energy-content {
       background-color: #fff;
       border-radius: 4px;
       padding: 20px;
       margin-top: 50px;
-      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
       text-align: left;
     }
   </style>
 </head>
+
 <body>
 
-<div class="container">
-  <div class="dropdown">
-    <button class="dropbtn">Select Industry</button>
-    <div class="dropdown-content">
-      <a onclick="redirectTo('/industry')">Textile Industry</a>
-      <a onclick="redirectTo('/weaving')">Weaving Industry</a>
-      <a onclick="redirectTo('/it')">IT Industry</a>
+  <div class="container">
+    <div class="dropdown">
+      <button class="dropbtn">Select Industry</button>
+      <div class="dropdown-content">
+        <a onclick="redirectTo('/industry')">Textile Industry</a>
+        <a onclick="redirectTo('/weaving')">Weaving Industry</a>
+        <a onclick="redirectTo('/it')">IT Industry</a>
+      </div>
+    </div>
+
+    <div class="energy-content">
+      <h2>Energy Auditing Systems</h2>
+      <p>An energy audit is an inspection, survey, and analysis of energy flows for energy conservation in a building,
+        process, or system to reduce the amount of energy input into the system without negatively affecting the output.
+        Energy auditing systems involve various techniques such as:</p>
+      <ul>
+        <li>On-site inspections</li>
+        <li>Data analysis</li>
+        <li>Energy consumption monitoring</li>
+        <li>Identification of energy-saving opportunities</li>
+        <li>Recommendations for improvements</li>
+      </ul>
+      <p>Implementing energy auditing systems can lead to significant cost savings, reduced environmental impact, and
+        improved sustainability for industries.</p>
     </div>
   </div>
-  
-  <div class="energy-content">
-    <h2>Energy Auditing Systems</h2>
-    <p>An energy audit is an inspection, survey, and analysis of energy flows for energy conservation in a building, process, or system to reduce the amount of energy input into the system without negatively affecting the output. Energy auditing systems involve various techniques such as:</p>
-    <ul>
-      <li>On-site inspections</li>
-      <li>Data analysis</li>
-      <li>Energy consumption monitoring</li>
-      <li>Identification of energy-saving opportunities</li>
-      <li>Recommendations for improvements</li>
-    </ul>
-    <p>Implementing energy auditing systems can lead to significant cost savings, reduced environmental impact, and improved sustainability for industries.</p>
-  </div>
-</div>
 
-<script>
-  function redirectTo(page) {
-    window.location.href = page;
-  }
-</script>
+  <script>
+    function redirectTo(page) {
+      window.location.href = page;
+    }
+  </script>
 
 </body>
+
 </html>

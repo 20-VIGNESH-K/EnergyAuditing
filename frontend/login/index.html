@@ -8,9 +8,12 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;   background-image: url("https://media.istockphoto.com/id/1138444757/photo/abstract-blur-inside-interior-of-modern-workplace-in-blue-color-with-exposure-light.webp?b=1&s=170667a&w=0&k=20&c=vRPygH4gsWBqhgxvv8u2cfjbab21e8gHPvIkG75YkGQ=");
-     background-repeat: no-repeat;
-    background-size: cover; /* Adjusts the size of the background image to cover the entire body */         margin: 0;
+            background-color: #f8f9fa;
+            background-image: url("https://media.istockphoto.com/id/1138444757/photo/abstract-blur-inside-interior-of-modern-workplace-in-blue-color-with-exposure-light.webp?b=1&s=170667a&w=0&k=20&c=vRPygH4gsWBqhgxvv8u2cfjbab21e8gHPvIkG75YkGQ=");
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* Adjusts the size of the background image to cover the entire body */
+            margin: 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -110,7 +113,7 @@
         function loginUser() {
             var form = document.getElementById('loginForm');
             const email = (document.getElementById("email").value).trim()
-            localStorage.setItem("email",email)
+            localStorage.setItem("email", email)
             var formData = new FormData(form);
 
             fetch('/login', {

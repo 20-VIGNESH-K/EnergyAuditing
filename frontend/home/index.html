@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,12 @@
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
-            padding-top: 60px; /* Offset the fixed navbar */
+            padding-top: 60px;
+            /* Offset the fixed navbar */
             background-image: url("https://media.istockphoto.com/id/1138444757/photo/abstract-blur-inside-interior-of-modern-workplace-in-blue-color-with-exposure-light.webp?b=1&s=170667a&w=0&k=20&c=vRPygH4gsWBqhgxvv8u2cfjbab21e8gHPvIkG75YkGQ=");
-     background-repeat: no-repeat;
-    background-size: cover; /* Adjusts the size of the background image to cover the entire body */
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* Adjusts the size of the background image to cover the entire body */
         }
 
         .navbar {
@@ -20,11 +23,15 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .navbar-brand, .navbar-nav .nav-link, .navbar-nav .sign-out-link {
+        .navbar-brand,
+        .navbar-nav .nav-link,
+        .navbar-nav .sign-out-link {
             color: #ecf0f1;
         }
 
-        .navbar-brand:hover, .navbar-nav .nav-link:hover, .navbar-nav .sign-out-link:hover {
+        .navbar-brand:hover,
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .sign-out-link:hover {
             color: #ffffff;
         }
 
@@ -48,7 +55,8 @@
         /* Blinking animation for menu items */
         @keyframes blink {
             50% {
-                color: #e74c3c; /* Blink color */
+                color: #e74c3c;
+                /* Blink color */
             }
         }
 
@@ -61,48 +69,56 @@
             font-size: 14px;
             margin-top: 5px;
         }
-        .dropdown{
+
+        .dropdown {
             width: 10%;
         }
-        button{
+
+        button {
             background-color: white;
             width: 100%;
             padding: 5px;
         }
+
         .dropdown-content {
             display: none;
             position: absolute;
             width: 100%;
             overflow: auto;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             background-color: white;
         }
+
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
         .dropdown-content a {
             display: block;
             color: #000000;
             padding: 5px;
             text-decoration: none;
         }
+
         .dropdown-content a:hover {
             color: #FFFFFF;
             background-color: #00A4BD;
         }
 
-        .card{
+        .card {
             background-color: #e3e2e2;
             padding: 3%;
             margin: 2%;
             font-size: xx-large;
             color: black;
             text-decoration: none;
-            width:20%;
+            width: 20%;
         }
-        .card:hover{
+
+        .card:hover {
             cursor: pointer;
         }
+
         /* Add more styles as needed */
 
         @media (max-width: 767px) {
@@ -116,11 +132,13 @@
     </style>
     <title>Energy Auditing System</title>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#"><i class="fas fa-bolt"></i> Energy Auditing System</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -140,21 +158,22 @@
 
     <div class="container">
         <center>
-        <div class="main-content">
-           
-            <h1>Welcome to our Home Page</h1>
-            <h3>Select Industry to calculate energy</h3>
-            <div class="box">
-                <a class="card" href="/listindustry">
-                    Industry
-                </a>
-               
+            <div class="main-content">
+
+                <h1>Welcome to our Home Page</h1>
+                <h3>Select Industry to calculate energy</h3>
+                <div class="box">
+                    <a class="card" href="/listindustry">
+                        Industry
+                    </a>
+
+                </div>
+
             </div>
-           
-        </div>
-    </center>
+        </center>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

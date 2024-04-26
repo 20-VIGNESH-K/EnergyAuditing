@@ -21,6 +21,7 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
+            position: relative; /* Required for absolute positioning of the button */
         }
 
         #resultTable {
@@ -49,6 +50,18 @@
         #resultTable tr:hover {
             background-color: #e0e0e0;
         }
+
+        /* Style for the go back button */
+        #goback {
+            position: absolute;
+            bottom: -100px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -73,6 +86,9 @@
                 <!-- Table body will be populated dynamically -->
             </tbody>
         </table>
+
+        <!-- Go back to home-page button -->
+        <button id="goback" onclick="goBack()">Go back to Home-page</button>
     </div>
 
     <script>
@@ -118,6 +134,11 @@
 
                 resultBody.appendChild(row);
             });
+        }
+
+        // Function to go back to the home-page
+        function goBack() {
+            window.location.href = "/home"; // Replace 'home-page.html' with your actual home page URL
         }
     </script>
 </body>

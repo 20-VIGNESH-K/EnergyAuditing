@@ -30,7 +30,7 @@ var ITAuditCollection *mongo.Collection
 var ITResultCollection *mongo.Collection
 
 func init() {
-	client, err := mongo.Connect(context.Background(), options.Client().ApplyURI("mongodb://localhost:27017"))
+	client, err := mongo.Connect(context.Background(), options.Client().ApplyURI("mongodb+srv://vignesh:Vignesh123@vigneshk.pvmu4rp.mongodb.net/?retryWrites=true&w=majority&appName=VigneshK"))
 	if err != nil {
 		panic(err)
 	}

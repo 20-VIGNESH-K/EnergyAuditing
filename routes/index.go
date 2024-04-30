@@ -26,11 +26,11 @@ func SetupRouter() *gin.Engine {
 	
 
 	// Handle POST requests for user registration and login
-	router.POST("/register", Controllers.CreateUser)
-	router.POST("/login", Controllers.Login)
-	router.POST("/weaving", Controllers.Weaving)
-	router.POST("/textile", Controllers.Textile)
-	router.POST("/it", Controllers.IT)
+	router.POST("/signup", Controllers.CreateUser)
+	router.POST("/signin", Controllers.Login)
+	router.POST("/weavingpost", Controllers.Weaving)
+	router.POST("/textilepost", Controllers.Textile)
+	router.POST("/itpost", Controllers.IT)
 	router.POST("/getuser",Controllers.GetUser)
 	return router
 }

@@ -21,7 +21,8 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            position: relative; /* Required for absolute positioning of the button */
+            position: relative;
+            /* Required for absolute positioning of the button */
         }
 
         #resultTable {
@@ -88,8 +89,11 @@
         </table>
 
         <!-- Go back to home-page button -->
+
         <button id="goback" onclick="goBack()">Go back to Industry selection page</button>
     </div>
+    <button style="margin-left: 85%;padding: 5px;border-radius: 5px;background-color:rgb(165, 165, 240) ;"
+        onclick="printaspdf()" id="download">Download</button>
 
     <script>
         DisplayData();
@@ -151,6 +155,16 @@
                 window.location.href = "/login"
             }
         }, 5000)
+
+
+        function printaspdf() {
+            document.getElementById("goback").style.display = "none"
+            document.getElementById("download").style.display = 'none';
+            window.print();
+            document.getElementById("goback").style.display = "block"
+            document.getElementById("download").style.display = 'block';
+        }
+
     </script>
 </body>
 

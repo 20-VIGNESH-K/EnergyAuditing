@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weaving Data Entry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("https://media.istockphoto.com/id/1138444757/photo/abstract-blur-inside-interior-of-modern-workplace-in-blue-color-with-exposure-light.webp?b=1&s=170667a&w=0&k=20&c=vRPygH4gsWBqhgxvv8u2cfjbab21e8gHPvIkG75YkGQ=");
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* Adjusts the size of the background image to cover the entire body */
+        }
+
+        form {
+            width: 1000px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .inputvalue {
+            width: 40%;
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+
+        .input-box {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        table {
+            display: table;
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+            align-items: center;
+            align-self: center;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        input {
+            max-width: 80%;
+            width: 50px;
+        }
+
+        .form-submit-button {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            font-size: large;
+            width: 300px;
+            margin-left: 350px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="itForm">
+
+        <h2 style="width: 100%;">IT Data Entry</h2>
+        <div class="input-group inputvalue">
+
+            <label for="month">Month</label>
+            <input type="number" id="month" name="month" placeholder="Enter the month to be calculated" required>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Appliances</th>
+                    <th>Operating Time Per Month (hr/month)</th>
+                    <th>Hourly Energy Consumption (kWh)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Row 1 -->
+                <tr>
+                    <td>1.</td>
+                    <td>Data Storage Systems</td>
+                    <td><input type="number" id="datastoragesystems" name="datastoragesystems" required></td>
+                    <td><input type="number" id="datastoragesystemsenergy" name="datastoragesystemsenergy" required></td>
+                </tr>
+                <!-- Row 2 -->
+                <tr>
+                    <td>2.</td>
+                    <td>Desktop Computers</td>
+                    <td><input type="number" id="desktopcomputers" name="desktopcomputers" required></td>
+                    <td><input type="number" id="desktopcomputersenergy" name="desktopcomputersenergy" required></td>
+                    <!-- If there's no hourly energy for this appliance -->
+                </tr>
+                <!-- Add more rows for other appliances as needed -->
+                <!-- Row 3 -->
+                <tr>
+                    <td>3.</td>
+                    <td>Laptops</td>
+                    <td><input type="number" id="laptops" name="laptops" required></td>
+                    <td><input type="number" id="laptopsenergy" name="laptopsenergy" required>
+                    </td>
+                </tr>
+                <!-- Add more rows for other appliances as needed -->
+                <!-- Row 4 -->
+                <tr>
+                    <td>4.</td>
+                    <td>Monitors</td>
+                    <td><input type="number" id="monitors" name="monitors" required></td>
+                    <td><input type="number" id="monitorsenergy" name="monitorsenergy" required>
+                    </td>
+                </tr>
+                <!-- Add more rows for other appliances as needed -->
+                <!-- Row 5 -->
+                <tr>
+                    <td>5.</td>
+                    <td>Printers</td>
+                    <td><input type="number" id="printers" name="printers" required></td>
+                    <td><input type="number" id="printersenergy" name="printersenergy" required>
+                    </td>
+                </tr>
+                <!-- Add more rows for other appliances as needed -->
+                <!-- Row 6 -->
+                <tr>
+                    <td>6.</td>
+                    <td>Cooling Systems</td>
+                    <td><input type="number" id="coolingsystems" name="coolingsystems" required></td>
+                    <td><input type="number" id="coolingsystemsenergy" name="coolingsystemsenergy" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>7.</td>
+                    <td>Uninterruptible Power Supplies (UPS)</td>
+                    <td><input type="number" id="ups" name="ups" required></td>
+                    <td><input type="number" id="upsenergy" name="upsenergy" required>
+                    </td>
+                </tr>
+
+                <!-- Add more rows for other appliances as needed -->
+            </tbody>
+        </table>
+
+        <button type="submit" class="form-submit-button">Submit</button>
+    </form>
+
+    <div id="result">
+        <h2>Results</h2>
+        <!-- Display results here -->
+    </div>
+
+    <div id="bestcontainer"></div>
+
+    <script>
+        document.getElementById("itForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var formData = {
+                datastoragesystems: parseInt((document.getElementById("datastoragesystems").value).trim()),
+                datastoragesystemsenergy: parseInt((document.getElementById("datastoragesystemsenergy").value).trim()),
+                desktopcomputers: parseInt((document.getElementById("desktopcomputers").value).trim()),
+                desktopcomputersenergy: parseInt((document.getElementById("desktopcomputersenergy").value).trim()),
+                laptops: parseInt((document.getElementById("laptops").value).trim()),
+                laptopsenergy: parseInt((document.getElementById("laptopsenergy").value).trim()),
+                monitors: parseInt((document.getElementById("monitors").value).trim()),
+                monitorsenergy: parseInt((document.getElementById("monitorsenergy").value).trim()),
+                printers: parseInt((document.getElementById("printers").value).trim()),
+                printersenergy: parseInt((document.getElementById("printersenergy").value).trim()),
+                coolingsystems: parseInt((document.getElementById("coolingsystems").value).trim()),
+                coolingsystemsenergy: parseInt((document.getElementById("coolingsystemsenergy").value).trim()),
+                ups: parseInt((document.getElementById("ups").value).trim()),
+                upsenergy: parseInt((document.getElementById("upsenergy").value).trim()),
+                // Add more machines as needed
+                month: parseInt((document.getElementById("month").value).trim())
+            };
+
+
+            fetch("/it", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message) {
+                        alert("Data Inserted Successfully");
+                        document.getElementById("datastoragesystems").value = "";
+                        document.getElementById("datastoragesystemsenergy").value = "";
+                        document.getElementById("desktopcomputers").value = "";
+                        document.getElementById("desktopcomputersenergy").value = "";
+                        document.getElementById("laptops").value = "";
+                        document.getElementById("laptopsenergy").value = "";
+                        document.getElementById("monitors").value = "";
+                        document.getElementById("monitorsenergy").value = "";
+                        document.getElementById("printers").value = "";
+                        document.getElementById("printersenergy").value = "";
+                        document.getElementById("coolingsystems").value = "";
+                        document.getElementById("coolingsystemsenergy").value = "";
+                        document.getElementById("ups").value = "";
+                        document.getElementById("upsenergy").value = "";
+                        // Add more machines as needed
+                        document.getElementById("month").value = "";
+
+                        localStorage.setItem("myData", JSON.stringify(data.message));
+                        window.location.href = "/result"
+                    } else if (data.error) {
+                        alert(data.error);
+                    } else {
+                        document.getElementById("result").innerHTML = "<pre>" + JSON.stringify(data, null, 2) + "</pre>";
+                        document.getElementById("result").style.display = "block";
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("An error occur. Please try again.");
+                });
+        });
+
+        let data = localStorage.getItem("login")
+        if (!data) {
+            window.location.href = "/login"
+        }
+        setInterval(() => {
+            let data = localStorage.getItem("login")
+            if (!data) {
+                window.location.href = "/login"
+            }
+        }, 50000)
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

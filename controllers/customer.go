@@ -17,13 +17,6 @@ func CreateUser(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	// hashedPassword, err := bcrypt.GenerateFromPassword([]byte(user.Password), bcrypt.DefaultCost)
-	// if err != nil {
-	// 	c.JSON(http.StatusInternalServerError, gin.H{"error": "Error hashing password"})
-	// 	return
-	// }
-	// user.Password = string(hashedPassword)
-
 	err := services.CreateUser(user)
 	if err != nil {
 		if err.Error() == "invalid Email" {
@@ -63,7 +56,9 @@ func Login(c *gin.Context) {
 			c.JSON(http.StatusUnauthorized, gin.H{"error": "User not found"})
 		} else if err.Error() == "password does not match" {
 			c.JSON(http.StatusUnauthorized, gin.H{"error": "Password does not match"})
-		} else {
+		} else if err.Error() == "please provide a password" {
+			c.JSON(http.StatusUnauthorized, gin.H{"error": "Please provide a password"}) 
+		}else {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Internal server error"})
 		}
 		return
@@ -82,6 +77,51 @@ func Weaving(c *gin.Context) {
     }
 
     result,err := services.Weaving(weave)
+    if err != nil {
+        if err.Error() == "string value is not allowed" {
+            c.JSON(http.StatusConflict, gin.H{"error": err.Error()})
+        } else {
+            c.JSON(http.StatusInternalServerError, gin.H{"error": "internal server error"})
+        }
+        return
+    }
+
+    c.JSON(http.StatusOK, gin.H{"message": result})
+}
+
+func Textile(c *gin.Context) {
+    var textile models.Textile
+
+    if err := c.ShouldBindJSON(&textile); err != nil {
+		log.Println(err)
+        c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+        return
+    }
+
+    result,err := services.Textile(textile)
+    if err != nil {
+        if err.Error() == "string value is not allowed" {
+            c.JSON(http.StatusConflict, gin.H{"error": err.Error()})
+        } else {
+            c.JSON(http.StatusInternalServerError, gin.H{"error": "internal server error"})
+        }
+        return
+    }
+
+    c.JSON(http.StatusOK, gin.H{"message": result})
+}
+
+
+func IT(c *gin.Context) {
+    var it models.IT
+
+    if err := c.ShouldBindJSON(&it); err != nil {
+		log.Println(err)
+        c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+        return
+    }
+
+    result,err := services.IT(it)
     if err != nil {
         if err.Error() == "string value is not allowed" {
             c.JSON(http.StatusConflict, gin.H{"error": err.Error()})

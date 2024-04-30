@@ -10,20 +10,27 @@ func SetupRouter() *gin.Engine {
 
 	// Serve static files for the register and login pages
 	router.Static("/register", "./frontend/createUser/")
-	router.Static("/result", "./frontend/result/")
+	router.Static("/profile", "./frontend/profile")
 	router.Static("/login", "./frontend/login/")
+	router.Static("/logout", "./frontend/logout/")
+
 	router.Static("/home", "./frontend/home/")
 	router.Static("/home-industry", "./frontend/industry")
-	router.Static("/home-home", "./frontend/home-home")
-	router.Static("/logout", "./frontend/logout/")
 	router.Static("/listindustry", "./frontend/dropdown")
+	
 	router.Static("/weaving", "./frontend/industry/weaving")
-	router.Static("/profile", "./frontend/profile")
+	router.Static("/textile", "./frontend/industry/textile")
+	router.Static("/it", "./frontend/industry/it")
+
+	router.Static("/result", "./frontend/result/")
+	
 
 	// Handle POST requests for user registration and login
 	router.POST("/register", Controllers.CreateUser)
 	router.POST("/login", Controllers.Login)
-	router.POST("/insert", Controllers.Weaving)
+	router.POST("/weaving", Controllers.Weaving)
+	router.POST("/textile", Controllers.Textile)
+	router.POST("/it", Controllers.IT)
 	router.POST("/getuser",Controllers.GetUser)
 	return router
 }

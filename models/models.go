@@ -42,8 +42,7 @@ type Weaving struct {
 	CreatedTime                  time.Time `json:"createdtime" bson:"createdtime"`
 	WeavingID                    string    `json:"weavingid" bson:"weavingid"`
 }
-
-type Result struct {
+type WeavingResult struct {
 	SievingMachineResult         int       `json:"sievingmachine_result" bson:"sievingmachine_result"`
 	IndirectWrapingMachineResult int       `json:"indirectwrapingmachine_result" bson:"indirectwrapingmachine_result"`
 	DirectWrapingMachineResult   int       `json:"directwrapingmachine_result" bson:"directwrapingmachine_result"`
@@ -58,6 +57,81 @@ type Result struct {
 	WeavingID                    string    `json:"weavingid" bson:"weavingid"`
 }
 
+type Textile struct {
+	CreatedTime              time.Time `json:"createdtime" bson:"createdtime"`
+	TextileID                string    `json:"textileid" bson:"textileid"`
+	SpinningMachine          int       `json:"spinningmachine" bson:"spinningmachine"`
+	SpinningMachineEnergy    int       `json:"spinningmachineenergy" bson:"spinningmachineenergy"`
+	WeavingLoom              int       `json:"weavingloom" bson:"weavingloom"`
+	WeavingLoomEnergy        int       `json:"weavingloomenergy" bson:"weavingloomenergy"`
+	KnittingMachine          int       `json:"knittingmachine" bson:"knittingmachine"`
+	KnittingMachineEnergy    int       `json:"knittingmachineenergy" bson:"knittingmachineenergy"`
+	DyeingMachine            int       `json:"dyeingmachine" bson:"dyeingmachine"`
+	DyeingMachineEnergy      int       `json:"dyeingmachineenergy" bson:"dyeingmachineenergy"`
+	PrintingMachine          int       `json:"printingmachine" bson:"printingmachine"`
+	PrintingMachineEnergy    int       `json:"printingmachineenergy" bson:"printingmachineenergy"`
+	FinishingMachine         int       `json:"finishingmachine" bson:"finishingmachine"`
+	FinishingMachineEnergy   int       `json:"finishingmachineenergy" bson:"finishingmachineenergy"`
+	CuttingMachine           int       `json:"cuttingmachine" bson:"cuttingmachine"`
+	CuttingMachineEnergy     int       `json:"cuttingmachineenergy" bson:"cuttingmachineenergy"`
+	SewingMachine            int       `json:"sewingmachine" bson:"sewingmachine"`
+	SewingMachineEnergy      int       `json:"sewingmachineenergy" bson:"sewingmachineenergy"`
+	EmbroideryMachine        int       `json:"embroiderymachine" bson:"embroiderymachine"`
+	EmbroideryMachineEnergy  int       `json:"embroiderymachineenergy" bson:"embroiderymachineenergy"`
+	SteamersAndPresses       int       `json:"steamersandpresses" bson:"steamersandpresses"`
+	SteamersAndPressesEnergy int       `json:"steamersandpressesenergy" bson:"steamersandpressesenergy"`
+	Month                    int       `json:"month" bson:"month"`
+}
+
+type TextileResult struct {
+	TextileID                string    `json:"textileid" bson:"textileid"`
+	CreatedTime              time.Time `json:"createdtime" bson:"createdtime"`
+	SpinningMachineResult    int       `json:"spinningmachineresult" bson:"spinningmachineresult"`
+	WeavingLoomResult        int       `json:"weavingloomresult" bson:"weavingloomresult"`
+	KnittingMachineResult    int       `json:"knittingmachineresult" bson:"knittingmachineresult"`
+	DyeingMachineResult      int       `json:"dyeingmachineresult" bson:"dyeingmachineresult"`
+	PrintingMachineResult    int       `json:"printingmachineresult" bson:"printingmachineresult"`
+	FinishingMachineResult   int       `json:"finishingmachineresult" bson:"finishingmachineresult"`
+	CuttingMachineResult     int       `json:"cuttingmachineresult" bson:"cuttingmachineresult"`
+	SewingMachineResult      int       `json:"sewingmachineresult" bson:"sewingmachineresult"`
+	EmbroideryMachineResult  int       `json:"embroiderymachineresult" bson:"embroiderymachineresult"`
+	SteamersAndPressesResult int       `json:"steamersandpressesresult" bson:"steamersandpressesresult"`
+	MonthResult              int       `json:"monthresult" bson:"monthresult"`
+}
+
+type IT struct {
+	CreatedTime              time.Time `json:"createdtime" bson:"createdtime"`
+	ITID                     string    `json:"itid" bson:"itid"`
+	DataStorageSystems       int       `json:"datastoragesystems" bson:"datastoragesystems"`
+	DesktopComputers         int       `json:"desktopcomputers" bson:"desktopcomputers"`
+	Laptops                  int       `json:"laptops" bson:"laptops"`
+	Monitors                 int       `json:"monitors" bson:"monitors"`
+	Printers                 int       `json:"printers" bson:"printers"`
+	CoolingSystems           int       `json:"coolingsystems" bson:"coolingsystems"`
+	UPS                      int       `json:"ups" bson:"ups"`
+	DataStorageSystemsEnergy int       `json:"datastoragesystemsenergy" bson:"datastoragesystemsenergy"`
+	DesktopComputersEnergy   int       `json:"desktopcomputersenergy" bson:"desktopcomputersenergy"`
+	LaptopsEnergy            int       `json:"laptopsenergy" bson:"laptopsenergy"`
+	MonitorsEnergy           int       `json:"monitorsenergy" bson:"monitorsenergy"`
+	PrintersEnergy           int       `json:"printerenergy" bson:"printerenergy"`
+	CoolingSystemsEnergy     int       `json:"coolingsystemsenergy" bson:"coolingsystemsenergy"`
+	UPSEnergy                int       `json:"upsenergy" bson:"upsenergy"`
+	Month                    int       `json:"month" bson:"month"`
+}
+
+type ITResult struct {
+	CreatedTime              time.Time `json:"createdtime" bson:"createdtime"`
+	ITID                     string    `json:"itid" bson:"itid"`
+	DataStorageSystemsResult int       `json:"datastoragesystemsresult" bson:"datastoragesystemsresult"`
+	DesktopComputersResult   int       `json:"desktopcomputersresult" bson:"desktopcomputersresult"`
+	LaptopsResult            int       `json:"laptopsresult" bson:"laptopsresult"`
+	MonitorsResult           int       `json:"monitorsresult" bson:"monitorsresult"`
+	PrintersResult           int       `json:"printersresult" bson:"printersresult"`
+	CoolingSystemsResult     int       `json:"coolingsystemsresult" bson:"coolingsystemsresult"`
+	UPSResult                int       `json:"upsresult" bson:"upsresult"`
+	MonthResult              int       `json:"monthresult" bson:"monthresult"`
+}
+
 type GetUser struct {
 	Email string `json:"email" bson:"email"`
 }
@@ -65,14 +139,14 @@ type GetUser struct {
 type EnergyAuditResult struct {
 	Machine                string `json:"machine" bson:"machine"`
 	BestMachine            string `json:"bestmachine" bson:"bestmachine"`
-	MachineEnergyUsage     int `json:"machineenergyusage" bson:"machineenergyusage"`
-	BestMachineEnergyUsage int `json:"bestmachineenergyusage" bson:"bestmachineenergyusage"`
+	MachineEnergyUsage     int    `json:"machineenergyusage" bson:"machineenergyusage"`
+	BestMachineEnergyUsage int    `json:"bestmachineenergyusage" bson:"bestmachineenergyusage"`
 	Energy_Saved           int    `json:"energysaved" bson:"energysaved"`
 	IsBest                 bool   `json:"isbest" bson:"isbest"`
 }
 
 type EnergyAuditStore struct {
-	WeavingID   string              `json:"weavingid" bson:"weavingid"`
+	ID          string              `json:"id" bson:"id"`
 	CreatedTime time.Time           `json:"createdtime" bson:"createdtime"`
 	AuditResult []EnergyAuditResult `json:"energyauditresult" bson:"energyauditresult"`
 }

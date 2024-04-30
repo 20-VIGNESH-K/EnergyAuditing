@@ -218,6 +218,17 @@
 
         }
         DisplayUser()
+
+        let data = localStorage.getItem("login")
+        if (!data) {
+            window.location.href = "/login"
+        }
+        setInterval(() => {
+            let data = localStorage.getItem("login")
+            if (!data) {
+                window.location.href = "/login"
+            }
+        }, 50000)
     </script>
 </body>
 

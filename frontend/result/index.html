@@ -88,7 +88,7 @@
         </table>
 
         <!-- Go back to home-page button -->
-        <button id="goback" onclick="goBack()">Go back to Home-page</button>
+        <button id="goback" onclick="goBack()">Go back to Industry selection page</button>
     </div>
 
     <script>
@@ -138,8 +138,19 @@
 
         // Function to go back to the home-page
         function goBack() {
-            window.location.href = "/home"; // Replace 'home-page.html' with your actual home page URL
+            window.location.href = "/listindustry"; // Replace 'home-page.html' with your actual home page URL
         }
+
+        let data = localStorage.getItem("login")
+        if (!data) {
+            window.location.href = "/login"
+        }
+        setInterval(() => {
+            let data = localStorage.getItem("login")
+            if (!data) {
+                window.location.href = "/login"
+            }
+        }, 5000)
     </script>
 </body>
 

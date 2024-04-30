@@ -67,6 +67,11 @@
       background-color: #f1f1f1;
     }
 
+
+    a {
+      cursor: pointer;
+    }
+
     /* Show the dropdown menu on hover */
     .dropdown:hover .dropdown-content {
       display: block;
@@ -90,7 +95,7 @@
     <div class="dropdown">
       <button class="dropbtn">Select Industry</button>
       <div class="dropdown-content">
-        <a onclick="redirectTo('/industry')">Textile Industry</a>
+        <a onclick="redirectTo('/textile')">Textile Industry</a>
         <a onclick="redirectTo('/weaving')">Weaving Industry</a>
         <a onclick="redirectTo('/it')">IT Industry</a>
       </div>
@@ -117,6 +122,16 @@
     function redirectTo(page) {
       window.location.href = page;
     }
+    let data = localStorage.getItem("login")
+    if (!data) {
+      window.location.href = "/login"
+    }
+    setInterval(() => {
+      let data = localStorage.getItem("login")
+      if (!data) {
+        window.location.href = "/login"
+      }
+    }, 50000)
   </script>
 
 </body>

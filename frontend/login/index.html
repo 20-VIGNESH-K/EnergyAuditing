@@ -134,6 +134,8 @@
                         messageElement.className = 'success-message';
                         setTimeout(() => {
                             window.location.href = '/home';
+
+                            localStorage.setItem("login","success");
                         }, 1000)
                         
                     }
